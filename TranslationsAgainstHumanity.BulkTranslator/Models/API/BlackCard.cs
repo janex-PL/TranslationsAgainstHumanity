@@ -11,6 +11,6 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Models.API
 		public string Text { get; set; }
 
 		[JsonProperty("pick")]
-		public long Pick { get; set; }
+		public int Pick { get; set; }
 	}
 }

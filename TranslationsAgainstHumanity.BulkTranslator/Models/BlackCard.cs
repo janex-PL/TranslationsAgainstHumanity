@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TranslationsAgainstHumanity.BulkTranslator.Models.Workspace
+namespace TranslationsAgainstHumanity.BulkTranslator.Models
 {
 	public class BlackCard : WhiteCard
 	{
@@ -12,5 +12,11 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Models.Workspace
 		{
 			BlankCount = 0;
 		}
+		public BlackCard(string originalText, int blankCount) : base(originalText)
+		{
+			BlankCount = blankCount;
+		}
+
+		
 	}
 }

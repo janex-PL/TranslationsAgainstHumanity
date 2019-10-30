@@ -24,6 +24,15 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Translator
 			APIKey = apiKey;
 			AvailableLanguages = GetAvailableLanguages().Result;
 		}
+		public void DisplayAvaiableLanguages()
+		{
+			ConsoleTables.ConsoleTable ct = new ConsoleTables.ConsoleTable("Language code", "Language name");
+			foreach(var item in AvailableLanguages)
+			{
+				ct.AddRow(item.Key, item.Value);
+			}
+			ct.Write(ConsoleTables.Format.Alternative);
+		}
 		public async Task<Dictionary<string, string>> GetAvailableLanguages()
 		{
 			string apiCall = String.Format(APICall_GetLanguages, APIKey);

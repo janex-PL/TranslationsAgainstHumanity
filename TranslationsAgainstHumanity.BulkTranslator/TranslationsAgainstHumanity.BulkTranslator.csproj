@@ -33,11 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConsoleTables, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConsoleTables.2.3.0\lib\net40\ConsoleTables.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="ShellProgressBar, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShellProgressBar.4.3.0\lib\netstandard2.0\ShellProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.0.1\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Deserialization\JAHDeserialization.cs" />
+    <Compile Include="Converters\CardDeckConverter.cs" />
+    <Compile Include="Serialization\JAHSerialization.cs" />
     <Compile Include="Models\API\BlackCard.cs" />
     <Compile Include="Models\API\CardDeck.cs" />
-    <Compile Include="Models\Workspace\BlackCard.cs" />
-    <Compile Include="Models\Workspace\CardDeck.cs" />
-    <Compile Include="Models\Workspace\WhiteCard.cs" />
+    <Compile Include="Models\BlackCard.cs" />
+    <Compile Include="Models\CardDeck.cs" />
+    <Compile Include="Models\WhiteCard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\TAHSerialization.cs" />
     <Compile Include="Translator\Translator.cs" />
   </ItemGroup>
   <ItemGroup>
