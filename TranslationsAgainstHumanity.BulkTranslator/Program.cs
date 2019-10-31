@@ -12,7 +12,7 @@ namespace TranslationsAgainstHumanity.BulkTranslator
 		static void Main(string[] args)
 		{
 			Console.WriteLine("#########################################################");
-			Console.WriteLine("##	Bulk translator                                   ##");
+			Console.WriteLine("##   Bulk translator                                   ##");
 			Console.WriteLine("##                               Author: Jan Kliszcz   ##");
 			Console.WriteLine("#########################################################");
 			Console.WriteLine("## Powered by Yandex.Translate                         ##");
