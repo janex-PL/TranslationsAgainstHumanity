@@ -1,14 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using TranslationsAgainstHumanity.BulkTranslator.Models.API;
 using Newtonsoft.Json;
 
 namespace TranslationsAgainstHumanity.BulkTranslator.Serialization
 {
+	/// <summary>
+	/// Extension class containing methods for JAH model serialization
+	/// </summary>
 	public static class JAHSerialization
 	{
+		#region Methods
+
+		/// <summary>
+		/// Deserialize card deck in JAH format from file
+		/// </summary>
+		/// <param name="filePath">Path to the file containg card deck in JAH format</param>
+		/// <returns>CardDeck model in JAH format</returns>
 		public static CardDeck DeserializeCardDeck(string filePath)
 		{
 			string content = string.Empty;
@@ -35,6 +43,13 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Serialization
 			}
 
 		}
+
+		/// <summary>
+		/// Serializes card deck in JAH format to .json file
+		/// </summary>
+		/// <param name="cardDeck">card deck to serialize</param>
+		/// <param name="filePath">path to new file for the deck</param>
+		/// <returns>true, if serialization was succesfull, otherwise false</returns>
 		public static bool SerializeCardDeck(CardDeck cardDeck, string filePath)
 		{
 			try
@@ -54,7 +69,8 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Serialization
 				Environment.Exit(0);
 				return false;
 			}
-
 		}
+
+		#endregion
 	}
 }

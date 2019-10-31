@@ -1,26 +1,32 @@
 ﻿using ShellProgressBar;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TranslationsAgainstHumanity.BulkTranslator.Models;
-using TranslationsAgainstHumanity.BulkTranslator.Translator;
 namespace TranslationsAgainstHumanity.BulkTranslator.Converters
 {
+	/// <summary>
+	/// Extension class for converting card decks
+	/// </summary>
 	public static class CardDeckConverter
 	{
+		#region Methods
+
+		/// <summary>
+		/// Converts the deck from JAH to TAH format
+		/// </summary>
+		/// <param name="oldDeck">Card deck in JAH format</param>
+		/// <returns>Translated card deck in TAH format</returns>
 		public static async Task<Models.CardDeck> ConvertDeckToTAHFormat(Models.API.CardDeck oldDeck)
 		{
-			Console.Write("Enter API key for Yandex translation service: ");
+			Console.Write("Enter API key for Yandex translation service: ", ConsoleColor.Cyan);
 			string apiKey = Console.ReadLine();
 
 			Translator.Translator translator = new Translator.Translator(apiKey);
 
-			Console.WriteLine("List of avaiable languages: ");
+			Console.WriteLine("List of avaiable languages: ", ConsoleColor.Cyan);
 			translator.DisplayAvaiableLanguages();
 
-			Console.Write("Enter language code: ");
+			Console.Write("Enter language code: ", ConsoleColor.Cyan);
 			string language = Console.ReadLine();
 
 			Models.CardDeck newDeck = new CardDeck();
@@ -55,8 +61,11 @@ namespace TranslationsAgainstHumanity.BulkTranslator.Converters
 					pbar.Tick();
 				}
 			}
+			Console.WriteLine("Translation finished succesfully!", ConsoleColor.Green);
 
 			return newDeck;
 		}
+
+		#endregion
 	}
 }

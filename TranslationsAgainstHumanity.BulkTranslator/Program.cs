@@ -11,15 +11,20 @@ namespace TranslationsAgainstHumanity.BulkTranslator
 	{
 		static void Main(string[] args)
 		{
-
-			Console.Write("Enter path to JSON file: ");
+			Console.WriteLine("#########################################################");
+			Console.WriteLine("##	Bulk translator                                   ##");
+			Console.WriteLine("##                               Author: Jan Kliszcz   ##");
+			Console.WriteLine("#########################################################");
+			Console.WriteLine("## Powered by Yandex.Translate                         ##");
+			Console.WriteLine("#########################################################");
+			Console.Write("Enter path to JSON file: ", ConsoleColor.Cyan);
 			string filepath = Console.ReadLine();
 
 			Models.API.CardDeck oldDeck = JAHSerialization.DeserializeCardDeck(filepath);
 
 			Models.CardDeck newDeck = Converters.CardDeckConverter.ConvertDeckToTAHFormat(oldDeck).Result;
 
-			Console.Write("Enter path to new JSON file: ");
+			Console.Write("Enter path to new JSON file: ", ConsoleColor.Cyan);
 			filepath = Console.ReadLine();
 			TAHSerialization.SerializeCardDeck(newDeck, filepath);
 		}
