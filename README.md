@@ -57,4 +57,4 @@ Set of programs for translating and generating [Cards Against Humanity](https://
 ## Support
 If you have some questions, contact me via email **kliszczjan@gmail.com**.
 ## License
-This project is licensed under MIT License - see the [LICENSE](https://github.com/janex-PL/TranslationsAgainstHumanity/LICENSE) file for details.
+This project is licensed under MIT License - see the [LICENSE](https://github.com/janex-PL/TranslationsAgainstHumanity/blob/master/LICENSE) file for details.
